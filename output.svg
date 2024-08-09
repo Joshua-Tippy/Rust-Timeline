@@ -1,0 +1,15 @@
+<svg height="1000" width="1000" xmlns="http://www.w3.org/2000/svg">
+<line stroke="black" stroke-width="2" x1="500" x2="500" y1="0" y2="1000"/>
+<text fill="black" font-family="Verdana" font-size="20" x="505" y="50">
+1: Artaxerxes' 7th Year Decree: -458
+</text>
+<text fill="black" font-family="Verdana" font-size="20" x="505" y="100">
+2: Christ's Death: 30
+</text>
+<text fill="black" font-family="Verdana" font-size="20" x="505" y="150">
+3: Baptism of Christ: 30
+</text>
+<text fill="black" font-family="Verdana" font-size="20" x="505" y="200">
+4: Paul's Gentile Ministry Begins: 33
+</text>
+</svg>

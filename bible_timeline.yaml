@@ -1,0 +1,58 @@
+HistoricalTimeline:
+  title: "Biblical and Historical Events Timeline"
+  description: "A vertical timeline visualization of key biblical and historical events as interpreted by Full Preterism."
+  events:
+    - event_id: 1
+      title: "Artaxerxes' 7th Year Decree"
+      date: "458 BC"
+      date_precision: "YYYY"
+      tags:
+        - "Artaxerxes"
+        - "Persia"
+      description: "King Artaxerxes of Persia issues a decree in his seventh year, which Ezra records. This decree marks the beginning of the 490 years prophecy of Daniel 9, involving the restoration and rebuilding of Jerusalem."
+      scripture_references:
+        - "Ezra 7:11-26"
+        - "Daniel 9:24-27"
+
+    - event_id: 2
+      title: "Christ's Death"
+      date: "30 AD"
+      date_precision: "YYYY"
+      tags:
+        - "Christ"
+        - "crucifixion"
+      description: "The crucifixion of Jesus Christ, occurring in the middle of the final 'week' of Daniel's prophecy, fulfills the prediction of the Messiah being 'cut off' but not for himself."
+      scripture_references:
+        - "Matthew 27:32-56"
+        - "Mark 15:21-41"
+        - "Luke 23:26-49"
+        - "John 19:16-37"
+
+    - event_id: 3
+      title: "Baptism of Christ"
+      date: "30 AD"
+      date_precision: "YYYY"
+      tags:
+        - "Christ"
+        - "John the Baptist"
+      description: "The baptism of Jesus by John the Baptist, marking the Messiah's public manifestation, aligns with the '69 weeks' from the decree to rebuild Jerusalem as per Daniel's prophecy."
+      scripture_references:
+        - "Matthew 3:13-17"
+        - "Mark 1:9-11"
+        - "Luke 3:21-22"
+
+    - event_id: 4
+      title: "Paul's Gentile Ministry Begins"
+      date: "33 AD"
+      date_precision: "YYYY"
+      tags:
+        - "Christ"
+        - "crucifixion"
+      description: "Following his conversion, Paul begins his ministry to the Gentiles, symbolically concluding the '70 weeks' of Daniel's prophecy with the gospel reaching all nations."
+      scripture_references:
+        - "Acts 9"
+        - "Acts 13"
+
+
+
+
