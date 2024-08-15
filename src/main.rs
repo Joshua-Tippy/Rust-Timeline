@@ -10,7 +10,10 @@ fn main() {
     
     let timeline = format_data(get_data(file_path));
 
-    create_svg(timeline.clone());
+    let start = opt.start_date_end_date.0;
+    let end = opt.start_date_end_date.1;
+
+    create_svg(timeline.clone(), start.get_data(), end.get_data());
 
     //println!("Extracted strings: {:?}", timeline.HistoricalTimeline.events[0]);
     for event in timeline.HistoricalTimeline.events.iter() {
@@ -65,7 +68,7 @@ fn get_data(file_path:String) -> String {
 use svg::node::element::{/*Circle, Rectangle, */Text, Line};
 use svg::Document;
 //Draws SVG timeline
-fn create_svg(timeline: HistoricalTimeline) {
+fn create_svg(timeline: HistoricalTimeline, min: i32, max: i32) {
     let mut document = Document::new()
         .set("width", 1000)
         .set("height", 1000)
@@ -80,14 +83,16 @@ fn create_svg(timeline: HistoricalTimeline) {
 
             let mut iter = 50;
             for event in timeline.HistoricalTimeline.events.iter() {
-                document = document
-            .add(Text::new(event.event_id.to_string() + ": " + &event.title + ": " + &event.date)
-                .set("x", 505)
-                .set("y", iter)
-                .set("font-family", "Verdana")
-                .set("font-size", 20)
-                .set("fill", "black"));
-                iter += 50;
+                if event.date_int.unwrap() > min && event.date_int.unwrap() < max {
+                    document = document
+                    .add(Text::new(event.event_id.to_string() + ": " + &event.title + ": " + &event.date)
+                    .set("x", 505)
+                    .set("y", iter)
+                    .set("font-family", "Verdana")
+                    .set("font-size", 20)
+                    .set("fill", "black"));
+                    iter += 50;
+                }
             }
     // Save SVG to file
     svg::save("output.svg", &document).expect("Failed to save SVG file");

@@ -67,6 +67,14 @@ impl DateFormat {
         }
         //DateFormat::YYYY(format)
     }
+    pub fn get_data(&self) -> i32 {
+        match self {
+            DateFormat::YYYY(date) => date.parse::<i32>().unwrap(),
+            DateFormat::MM_YYYY(date) => date.parse::<i32>().unwrap(),
+            DateFormat::DD_MM_YYYY(date) => date.parse::<i32>().unwrap(),
+            DateFormat::DD_MM_YYYYzHH_MM_SS(date) => date.parse::<i32>().unwrap()
+        }
+    }
 }
 
 
@@ -95,28 +103,28 @@ pub struct Opt {
     /// Activate debug mode
     // short and long flags (-d, --debug) will be deduced from the field's name
     #[structopt(parse(try_from_str = parse_date_range))]
-    start_date_end_date: (DateFormat, DateFormat),
+    pub start_date_end_date: (DateFormat, DateFormat),
 
     /// Set speed
     // we don't want to name it "speed", need to look smart
     #[structopt(short = "t", long = "tags", default_value = "*")]
-    tags: Vec<String>,
+    pub tags: Vec<String>,
 
     /// Input file
     #[structopt(parse(from_os_str))]
-    input: PathBuf,
+    pub input: PathBuf,
 
     /// Output file, stdout if not present
     #[structopt(parse(from_os_str))]
-    output: Option<PathBuf>,
+    pub output: Option<PathBuf>,
 
     /// Where to write the output: to `stdout` or `file`
     #[structopt(short)]
-    direction: bool,
+    pub direction: bool,
 
     /// File name: only required when `out-type` is set to `file`
     #[structopt(name = "FILE", required_if("out-type", "file"))]
-    file_name: Option<String>,
+    pub file_name: Option<String>,
 }
 
 
